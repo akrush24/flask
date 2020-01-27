@@ -1,4 +1,5 @@
-=== First run: ===
+* First run
+
 ```source ./venv/bin/activate```
 
 
