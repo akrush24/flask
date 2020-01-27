@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -7,8 +7,9 @@ def root():
     return "[HOME]"
 
 @app.route("/hello")
-def hello():
-    return "Hello World"
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
 
 @app.route('/user/<username>', methods=['GET','POST'])
 def show_user_profile(username):
